@@ -19,7 +19,7 @@ namespace Gelo.Jenga.UI
 
         public void SetInfo(string domain, string cluster, string standardDesc)
         {
-            m_infoText.text = $"Grade Level: {domain}\nCluster: {cluster}\nStandard Description: {standardDesc}";
+            m_infoText.text = $"Grade Level: {domain}\n\nCluster: {cluster}\n\nStandard Description: {standardDesc}";
         }
         public void CreateButton(string name, int index)
         {

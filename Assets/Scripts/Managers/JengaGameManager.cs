@@ -66,6 +66,7 @@ namespace Gelo.Jenga
                     jbComponent.SetData(m_students[i].data[j]);
                     // add a listener for the action
                     m_uiManager.OnReleaseStack += jbComponent.RecievedReleasePhysics;
+                    jbComponent.OnClicked += m_uiManager.UpdateInfo;
                     // set positioning
                     jengaBlock.transform.SetParent(spawnHolder.transform);
                     if (j != 0)

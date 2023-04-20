@@ -25,7 +25,10 @@ namespace Gelo.Jenga.UI
             m_model.OnClickedResetCamera -= RecievedResetCam;
             m_model.OnClickedCamButton -= RecievedFocusCam;
         }
-
+        public void UpdateInfo(string domain, string cluster, string standardDesc)
+        {
+            m_model.SetInfo(domain, cluster, standardDesc);
+        }
         public void GenerateCameraButtons(List<StudentData> m_students)
         {
             for (int i = 0; i < m_students.Count; i++)

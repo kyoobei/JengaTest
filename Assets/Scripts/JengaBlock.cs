@@ -19,8 +19,11 @@ namespace Gelo.Jenga
 
         private bool m_isGlass = false;
 
+        public Action<string, string, string> OnClicked;
+
         public void SetData(JengaObject data)
         {
+            m_currentData = data;
             if (data.mastery == 0)
             {
                 m_jengaRenderer.material = m_matGlass;
@@ -34,6 +37,11 @@ namespace Gelo.Jenga
             {
                 m_jengaRenderer.material = m_matStone;
             }
+        }
+
+        private void OnMouseDown()
+        {
+            OnClicked?.Invoke(m_currentData.domain, m_currentData.cluster, m_currentData.standarddescription);
         }
 
         public void RecievedReleasePhysics()
